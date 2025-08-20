@@ -3,7 +3,9 @@ AneuSI (Aneurysm Surface Isolation) is a command line tool for isolating the ane
 
 ## Description
 
-AneuSI (Aneurysm Surface Isolation) is a command line tool for isolating the aneurysm dome and its neighboring vessels from the artery tree in 3D surfaces models of intracranial aneurysms. This tool receives the .vtk files corresponding to the surface model of the aneurysm, its centerlines and its neck polygon as inputs, and gives the isolated model surface as a .vtk PolyData file. 
+AneuSI (Aneurysm Surface Isolation) is a command line tool for isolating the aneurysm dome and its neighboring vessels from the artery tree in 3D surfaces models of intracranial aneurysms. This tool receives the .vtk files corresponding to the surface model of the aneurysm, its centerlines and its neck polygon as inputs, and gives the isolated model surface as a .vtk PolyData file. We show some examples in the following figure:
+
+<img width="1621" height="665" alt="figura_isolation" src="https://github.com/user-attachments/assets/b7ff829f-f6a1-4475-b066-ed8434d8bc42" />
 
 The algorithm selects reference points for each branch of the artery, and calculates the isolation distance from those points as the product of the inner diameter of the blood vessel in those reference points and a user-defined factor named "clipFactor", that allows the user to control the length of the remaining vasculature connected to the aneurysm dome. Reference points are selected depending of the location of the vessel: if it branches before reaching the aneurysm neck, the point is selected immediately after the bifurcation, and if the vessel reaches the neck, the point is selected where the vessel touches the ostium.
 
