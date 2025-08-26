@@ -27,7 +27,7 @@ Procedure:
 
 	2) Set the variables:
 		
-		CMAKE_BUILD_TYPE                 build_type                                      
+		CMAKE_BUILD_TYPE                 Release                                      
 		CMAKE_INSTALL_PREFIX             desired/prefix
 
 	and press c. After configuration, press g to generate. The default options are already defined as:
