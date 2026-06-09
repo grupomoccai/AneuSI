@@ -50,8 +50,32 @@ Once defined all paths and parameters in the .cfg file, the tool can be executed
 
 If the verbose parameter was set as "true", the tool will display some information about the process. AneuSI was developed as a purely command line application, so it does not have a GUI. Nevertheless, setting the rendering parameter "true" will open a windows after the process showing the final result, in order to perform a "quick" visual check of the isolated model. 
 
+## Adaptability to Other Vascular Applications
+
+AneuSI is built with a modular architecture, enabling straightforward adaptation to other vascular pathologies (e.g., automated isolation of stenotic segments, dissection flaps, or hemodynamically critical bifurcation zones). The extent of adaptation depends on your input data format and the specific clinical or computational task.
+
+### Function Pipeline Overview
+The tool operates through five sequential stages. Below is a schematic of the workflow:
+
+```mermaid
+flowchart TD
+  S1["1. Data Input & Configuration"] --> S2["2. Geometric Analysis & Classification"]
+  S2 --> S3["3. Clipping Points Selection"]
+  S3 --> S4["4. Mesh Processing & ROI Extraction"]
+  S4 --> S5["5. Output & Visualization"]
+
+  S1 --> F1["`ReadInputData`"]
+  S1 --> F2["`GetNeckPlane` *(Aneurysm-specific)*"]
+  S2 --> F3["`CenterlinesLocator` *(Aneurysm-specific)*"]
+  S3 --> F4["`FindBranchClipPoints`"]
+  S3 --> F5["`FindLateralClipPoints` / `FindTerminalClipPoints` *(Aneurysm-specific)*"]
+  S4 --> F6["`AneurysmClip`"]
+  S4 --> F7["`ClipConnecExtractor`"]
+  S5 --> F8["`vtkAneuRender`"]
+
 ## Troubleshooting
 
 Software has been tested in Linux Debian 10-12 with VTK 8.2-9.0. Issues with other distributions or problems with the algorithm will be shown here. 
 
-Please, report issues or bugs to _______________.
+Please, report issues or bugs to nmuzi@fcai.uncu.edu.ar.
+
