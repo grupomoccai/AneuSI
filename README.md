@@ -3,7 +3,8 @@ AneuSI (Aneurysm Surface Isolation) is a command line tool for isolating the ane
 
 ## Description
 
-AneuSI (Aneurysm Surface Isolation) is a command line tool for isolating the aneurysm dome and its neighboring vessels from the artery tree in 3D surfaces models of intracranial aneurysms. This tool receives the .vtk files corresponding to the surface model of the aneurysm, its centerlines and its neck polygon as inputs, and gives the isolated model surface as a .vtk PolyData file. 
+AneuSI (Aneurysm Surface Isolation) is a command-line tool for isolating the aneurysm dome and its neighboring vessels from the artery tree in 3D surface models of intracranial aneurysms. This tool receives the .vtk files corresponding to the surface model of the aneurysm, its centerlines and its neck polygon as inputs, and gives the isolated model surface as a .vtk PolyData file. 
+> **Note**: AneuSI was specifically developed around the data structure and centerline conventions of the AneuriskWeb database. Extending its application to other datasets requires adapting the input handling and spatial reference logic to align with the target database's format.
 
 <img width="1277" height="853" alt="figura_isolation" src="https://github.com/user-attachments/assets/18ba2b8f-3bdb-481a-97fb-f3bdf1942aca" />
 
@@ -76,6 +77,20 @@ flowchart TD
     classDef aneurysmSpecific fill:#fff3e0,stroke:#ff9800,stroke-width:2px;
     class F2,F3,F5 aneurysmSpecific;
 ```
+Functions `GetNeckPlane`, `CenterlinesLocator`, and those in **Step 3** of the diagram (Clipping points selection) are specific to aneurysm processing, due to the requirement of using the aneurysm neck as a spatial reference. However, the remaining functions can be readily applied to diverse vascular problems with appropriate modifications.
+
+The `AneurysmClip` function performs the Boolean operation described in the main article, enabling isolation of the region of interest from the rest of the model. This function requires:
+
+- The input `vtkPolyData` mesh
+- Centerline coordinates (array/list of 3D points)
+- Two integer lists containing:
+  1. IDs of the selected clipping points along the centerline
+  2. Cutting direction flags (e.g., `+1` for downstream, `-1` for upstream)
+
+This operation can be applied to **any vascular structure** with minimal changes, regardless of the pathology, provided the data format is compatible. Other functions that can be used are:
+
+- **`ClipConnecExtractor`**: Removes disconnected mesh segments based on the closest connected component to a reference point, and stores the ROI in a new `vtkPolyData` object, which is subsequently exported as a file.
+- **`vtkAneuRender`** (Step 5): Visualization function that should be modified according to the specific `vtkPolyData` objects being visualized in each application. 
 
 ## Troubleshooting
 
