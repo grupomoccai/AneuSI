@@ -64,14 +64,18 @@ flowchart TD
   S3 --> S4["4. Mesh Processing & ROI Extraction"]
   S4 --> S5["5. Output & Visualization"]
 
-  S1 --> F1["`ReadInputData`"]
-  S1 --> F2["`GetNeckPlane` *(Aneurysm-specific)*"]
-  S2 --> F3["`CenterlinesLocator` *(Aneurysm-specific)*"]
-  S3 --> F4["`FindBranchClipPoints`"]
-  S3 --> F5["`FindLateralClipPoints` / `FindTerminalClipPoints` *(Aneurysm-specific)*"]
-  S4 --> F6["`AneurysmClip`"]
-  S4 --> F7["`ClipConnecExtractor`"]
-  S5 --> F8["`vtkAneuRender`"]
+  S1 --> F1["ReadInputData"]
+  S1 --> F2["GetNeckPlane<br/>(Aneurysm-specific)"]
+  S2 --> F3["CenterlinesLocator<br/>(Aneurysm-specific)"]
+  S3 --> F4["FindBranchClipPoints"]
+  S3 --> F5["FindLateralClipPoints / FindTerminalClipPoints<br/>(Aneurysm-specific)"]
+  S4 --> F6["AneurysmClip<br/>(Boolean mesh operation)"]
+  S4 --> F7["ClipConnecExtractor<br/>(Connected component cleanup)"]
+  S5 --> F8["vtkAneuRender<br/>(VTK visualization)"]
+  
+  style F2 fill:#fff3e0,stroke:#ff9800
+  style F3 fill:#fff3e0,stroke:#ff9800
+  style F5 fill:#fff3e0,stroke:#ff9800
 
 ## Troubleshooting
 
