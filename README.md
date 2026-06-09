@@ -96,5 +96,5 @@ This operation can be applied to **any vascular structure** with minimal changes
 
 Software has been tested in Linux Debian 10-12 with VTK 8.2-9.0. Issues with other distributions or problems with the algorithm will be shown here. 
 
-Please, report issues or bugs to nmuzi@fcai.uncu.edu.ar.
+Please, report issues or bugs to ______________________.
 
