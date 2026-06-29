@@ -1,8 +1,8 @@
 /*=========================================================================
-                            Aneurysm Surface Isolation
+                ANEUSI - Aneurysm Surface Isolation
   =========================================================================
 File      : AneuSI.cpp
-Copyright : (C)opyright 2021++            
+Copyright : (C)opyright 2026++
 Authors   : N. Muzi, D. Millan
 Purpose   : This application isolates an aneurysm and the adyacent parent 
             vessel from a blood vessel tree. It receives a .cfg file (see
@@ -20,7 +20,7 @@ Purpose   : This application isolates an aneurysm and the adyacent parent
             Outputs: 
                 - Polydata mesh of the isolated model. 
                 
-Date      : December 2024
+Date      : Jun 29 2026
 Version   : 1.0
 Changes   : 
 

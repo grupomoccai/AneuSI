@@ -1,5 +1,5 @@
 /*=========================================================================
-Module    : AneuSurfIsolation
+Module    : ANEUSI - Aneurysm Surface Isolation
 File      : aneuConfigFile.h
 Copyright : (C)opyright 2009++
             See COPYRIGHT statement in top level directory.

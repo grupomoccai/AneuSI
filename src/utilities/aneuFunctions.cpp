@@ -1,13 +1,13 @@
 /*=========================================================================
-                           ANEUSURFISOLATION
+                        ANEUSI - Aneurysm Surface Isolation
   =========================================================================
-Module    : AneuSurfIsolation 
-File      : BioFunctions.cpp
+Module    : ANEUSI - Aneurysm Surface Isolation
+File      : aneuFunctions.cpp
 Copyright : (C)opyright 2021++
 Authors   : D. Millan, A. Rosolen
 Modified  : N. Muzi
 Purpose   : Functions from BioMechanics library, for standalone 
-            implementation of bioAneuIsolation application.
+            implementation of ANEUSI application.
             This functions were used with permission from their authors. 
 Date      :
 Version   :

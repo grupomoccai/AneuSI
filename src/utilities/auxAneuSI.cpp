@@ -1,12 +1,12 @@
 /*=========================================================================
   
-Module    : Aneurysms - Biomechanics Applications
+Module    : ANEUSI - Aneurysm Surface Isolation
 File      : AuxAneuSI.cpp
-Copyright : (C)opyright 2022++
+Copyright : (C)opyright 2024++
             See COPYRIGHT statement in top level directory.
 Authors   : N. Muzi, D. Millan
 Purpose   : Auxiliary file with the definition of all functions used in
-            bioAneuIsolation APP (see bioAneuSI.cpp and
+            ANEUSI (see bioAneuSI.cpp and
             auxAneuSI.h files).
 Date      : December 2024
 Version   : 1
